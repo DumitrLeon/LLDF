@@ -1,8 +1,10 @@
 extends State
 class_name Run
 
+
 func Enter():
 	anim.play("Run")
+
 
 func Update(_delta: float):
 	player.velocity.x = x_input() * player.speed * 3.54
@@ -12,6 +14,10 @@ func Update(_delta: float):
 	
 	if x_input() == 0:
 		Transitioned.emit(self, "Idle")
+	
+	if check_jump():
+		Transitioned.emit(self, "Jump")
+
 
 func _physics_process(delta: float) -> void:
 	if not check_floor():

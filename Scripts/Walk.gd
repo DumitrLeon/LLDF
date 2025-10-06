@@ -1,8 +1,10 @@
 extends State
 class_name Walk
 
+
 func Enter():
 	anim.play("Walk")
+
 
 func Update(_delta: float):
 	if anim.frame != 0:
@@ -15,6 +17,10 @@ func Update(_delta: float):
 	
 	if x_input() == 0:
 		Transitioned.emit(self, "Idle")
+	
+	if check_jump():
+		Transitioned.emit(self, "Jump")
+
 
 func _physics_process(delta: float) -> void:
 	if not check_floor():

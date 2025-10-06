@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ictw8x784ppy"]
+[gd_scene load_steps=33 format=3 uid="uid://ictw8x784ppy"]
 
 [ext_resource type="Script" uid="uid://domreqs5cv4pa" path="res://Scripts/player.gd" id="1_dewec"]
 [ext_resource type="Texture2D" uid="uid://dvpxxb02iglcv" path="res://Asstets/Player/Idle.png" id="1_rpqav"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c034d1xjllc7w" path="res://Asstets/Player/Jump_up.png" id="5_miouo"]
 [ext_resource type="Script" uid="uid://dslu703evu0nb" path="res://Scripts/Idle_air.gd" id="8_megsn"]
 [ext_resource type="Script" uid="uid://dobxgneym7rbb" path="res://Scripts/Run.gd" id="9_yoq75"]
+[ext_resource type="Script" uid="uid://ce5bnmh8rwsnn" path="res://Scripts/Jump.gd" id="13_miouo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(6, 31)
@@ -112,14 +113,17 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_o3h8g")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1e7my")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_arntx")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"Jump_side",
@@ -132,8 +136,11 @@ animations = [{
 "duration": 0.8,
 "texture": SubResource("AtlasTexture_ulo2v")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_1iu4k")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"Jump_up",
@@ -191,8 +198,6 @@ shape = SubResource("RectangleShape2D_kyqiw")
 sprite_frames = SubResource("SpriteFrames_nn08x")
 animation = &"Jump_side"
 autoplay = "Idle"
-frame = 2
-frame_progress = 1.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_gntrk")
@@ -213,5 +218,9 @@ metadata/_custom_type_script = "uid://dslu703evu0nb"
 [node name="Run" type="Node" parent="StateMachine"]
 script = ExtResource("9_yoq75")
 metadata/_custom_type_script = "uid://dobxgneym7rbb"
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("13_miouo")
+metadata/_custom_type_script = "uid://ce5bnmh8rwsnn"
 
 [node name="Timers" type="Node" parent="."]

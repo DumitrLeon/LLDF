@@ -4,7 +4,6 @@ class_name State
 @warning_ignore("unused_signal")
 signal Transitioned
 var StateMachine = FiniteStateMachine
-var Anim
 var player
 var anim
 
@@ -12,7 +11,6 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 	anim = player.find_child("AnimatedSprite2D")
 	StateMachine = get_parent()
-	Anim = player.find_child("AnimatedSprite2D")
 
 func Enter():
 	pass
@@ -41,3 +39,9 @@ func check_floor():
 		return true
 	else:
 		return false
+
+func apply_gravity():
+	if not check_floor():
+		player.velocity.y += player.gravity
+	else:
+		player.velocity.y = 0

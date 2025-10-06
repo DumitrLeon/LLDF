@@ -2,14 +2,18 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed = 50
-@export var jump_boost = -300
+@export var jump_boost = -350
 @export var gravity = 20
+
+var jump = false
 
 func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	pass
+	if jump:
+		jump = false
+		velocity.y = jump_boost
 
 func _physics_process(delta: float) -> void:
 	if velocity.x > 0:
