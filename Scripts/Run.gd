@@ -5,7 +5,7 @@ func Enter():
 	anim.play("Run")
 
 func Update(_delta: float):
-	player.velocity.x = x_input() * player.speed * 2
+	player.velocity.x = x_input() * player.speed * 3.54
 	
 	if Input.is_action_just_released("sprint"):
 		Transitioned.emit(self, "Walk")
