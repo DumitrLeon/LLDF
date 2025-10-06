@@ -41,8 +41,3 @@ func check_floor():
 		return true
 	else:
 		return false
-
-func apply_gravity():
-	if not player.is_on_floor() and player.is_inside_tree():
-		player.velocity.y += player.gravity
-		
