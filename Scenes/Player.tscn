@@ -113,7 +113,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.5,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_o3h8g")
 }, {
 "duration": 1.0,
@@ -130,7 +130,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.5,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_lslt6")
 }, {
 "duration": 0.8,
@@ -198,6 +198,8 @@ shape = SubResource("RectangleShape2D_kyqiw")
 sprite_frames = SubResource("SpriteFrames_nn08x")
 animation = &"Jump_side"
 autoplay = "Idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_gntrk")

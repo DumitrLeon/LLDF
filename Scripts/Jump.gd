@@ -1,21 +1,26 @@
-extends State
+extends Movement
 class_name Jump
 
+var frame_progress = 0
 
 func Enter():
-	player.jump = true
-	if x_input() == 0:
-		anim.play("Jump_up")
-	else:
-		anim.play("Jump_side")
-
+	player.velocity.y = player.jump_boost
 
 
 func Update(_delta: float):
-	if (anim.animation == "Jump_up" or anim.animation == "Jump_side")  and anim.frame > 2:
+	super.Update(_delta)
+	if player.velocity.y > -30:
 		Transitioned.emit(self, "Idle_air")
 
 
-func _physics_process(delta: float) -> void:
-	if check_floor() and anim.frame > 0:
-		Transitioned.emit(self, "Idle")
+func Physics_process(delta: float) -> void:
+	apply_gravity()
+	if check_floor():
+		Transitioned.emit(self, "idle")
+	
+	frame_progress = anim.frame_progress
+	if abs(player.velocity.x) < 0.1:
+		anim.play("Jump_up")
+	else:
+		anim.play("Jump_side")
+	anim.frame_progress = frame_progress

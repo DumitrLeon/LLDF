@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if current_state:
-		current_state.Update(_delta)
+		current_state.Physics_process(_delta)
 
 func on_child_transitioned(state, new_state_name):
 	if state != current_state:

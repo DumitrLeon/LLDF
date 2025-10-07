@@ -1,4 +1,4 @@
-extends State
+extends Movement
 class_name Walk
 
 
@@ -7,21 +7,15 @@ func Enter():
 
 
 func Update(_delta: float):
-	if anim.frame != 0:
-		player.velocity.x = x_input() * player.speed
-	else:
-		player.velocity.x = x_input() * (player.speed / 2)
-	
+	check_jump()
+	super.Update(_delta)
+	if player.dir == 0:
+		Transitioned.emit(self, "Idle")
 	if Input.is_action_pressed("sprint"):
 		Transitioned.emit(self, "Run")
-	
-	if x_input() == 0:
-		Transitioned.emit(self, "Idle")
-	
-	if check_jump():
-		Transitioned.emit(self, "Jump")
 
 
-func _physics_process(delta: float) -> void:
+func Physics_process(delta: float) -> void:
 	if not check_floor():
 		Transitioned.emit(self, "Idle_air")
+	
