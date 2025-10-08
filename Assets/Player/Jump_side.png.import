@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0qjmgsv8dcd7"
-path="res://.godot/imported/brick.png-162309040209d53458150b93697df693.ctex"
+uid="uid://ch0fl2h0ulk7x"
+path="res://.godot/imported/Jump_side.png-5334467f6c2e7c45bb930a8f1015c3f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asstets/TileSets/brick.png"
-dest_files=["res://.godot/imported/brick.png-162309040209d53458150b93697df693.ctex"]
+source_file="res://Assets/Player/Jump_side.png"
+dest_files=["res://.godot/imported/Jump_side.png-5334467f6c2e7c45bb930a8f1015c3f3.ctex"]
 
 [params]
 

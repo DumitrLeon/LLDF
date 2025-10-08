@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch0fl2h0ulk7x"
-path="res://.godot/imported/Jump_side.png-70e14647f9a42a076cd92485dc678c25.ctex"
+uid="uid://ceedvxffgqsj2"
+path="res://.godot/imported/Block.png-0a90d427c56ff778638b81b84b572400.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asstets/Player/Jump_side.png"
-dest_files=["res://.godot/imported/Jump_side.png-70e14647f9a42a076cd92485dc678c25.ctex"]
+source_file="res://Assets/TileSets/Block.png"
+dest_files=["res://.godot/imported/Block.png-0a90d427c56ff778638b81b84b572400.ctex"]
 
 [params]
 

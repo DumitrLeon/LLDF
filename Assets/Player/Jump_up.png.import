@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwfdb44qpmeo1"
-path="res://.godot/imported/bob.png-072f85fd825852341f176c6e7656541b.ctex"
+uid="uid://c034d1xjllc7w"
+path="res://.godot/imported/Jump_up.png-a6de81d99e7f6494c42ae894bdbe2019.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asstets/Enemies/bob.png"
-dest_files=["res://.godot/imported/bob.png-072f85fd825852341f176c6e7656541b.ctex"]
+source_file="res://Assets/Player/Jump_up.png"
+dest_files=["res://.godot/imported/Jump_up.png-a6de81d99e7f6494c42ae894bdbe2019.ctex"]
 
 [params]
 

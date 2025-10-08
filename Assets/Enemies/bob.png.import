@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhk5klphr4fam"
-path="res://.godot/imported/TileMapTEST.png-e682bd37c76bd428c1676cd33d400309.ctex"
+uid="uid://dwfdb44qpmeo1"
+path="res://.godot/imported/bob.png-d9c067fc2a02697aca8c35133182017d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asstets/TileSets/TileMapTEST.png"
-dest_files=["res://.godot/imported/TileMapTEST.png-e682bd37c76bd428c1676cd33d400309.ctex"]
+source_file="res://Assets/Enemies/bob.png"
+dest_files=["res://.godot/imported/bob.png-d9c067fc2a02697aca8c35133182017d.ctex"]
 
 [params]
 

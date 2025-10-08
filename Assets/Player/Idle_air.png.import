@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c034d1xjllc7w"
-path="res://.godot/imported/Jump_up.png-0436d48b8e73c34164636563c8c91f66.ctex"
+uid="uid://b3ms000kqpakx"
+path="res://.godot/imported/Idle_air.png-dfdeb54689ec51d87771120df809de62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asstets/Player/Jump_up.png"
-dest_files=["res://.godot/imported/Jump_up.png-0436d48b8e73c34164636563c8c91f66.ctex"]
+source_file="res://Assets/Player/Idle_air.png"
+dest_files=["res://.godot/imported/Idle_air.png-dfdeb54689ec51d87771120df809de62.ctex"]
 
 [params]
 
