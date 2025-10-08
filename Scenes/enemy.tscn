@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1oofy5jbf14u"]
+[gd_scene load_steps=12 format=3 uid="uid://b1oofy5jbf14u"]
 
 [ext_resource type="Script" uid="uid://buk86veypy4fo" path="res://Scripts/Enemy/Enemy.gd" id="1_afpow"]
 [ext_resource type="Texture2D" uid="uid://dwfdb44qpmeo1" path="res://Assets/Enemies/bob.png" id="2_287tu"]
 [ext_resource type="Script" uid="uid://c78ihmia20tsb" path="res://Scripts/Enemy/enemy_state_machine.gd" id="2_afpow"]
 [ext_resource type="Script" uid="uid://c1ph3lyxocgbq" path="res://Scripts/Enemy/patrolling.gd" id="4_287tu"]
+[ext_resource type="Script" uid="uid://dwta572vys5bf" path="res://Scripts/Enemy/Chasing.gd" id="5_ghaa6"]
+[ext_resource type="Script" uid="uid://b2clcsnavgukf" path="res://Scripts/Enemy/Attack.gd" id="6_1dp5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_287tu"]
 size = Vector2(22.712141, 62.16569)
@@ -77,6 +79,14 @@ initial_state = NodePath("Patrolling")
 [node name="Patrolling" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("4_287tu")
 metadata/_custom_type_script = "uid://c1ph3lyxocgbq"
+
+[node name="Chasing" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("5_ghaa6")
+metadata/_custom_type_script = "uid://dwta572vys5bf"
+
+[node name="Attack" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("6_1dp5w")
+metadata/_custom_type_script = "uid://b2clcsnavgukf"
 
 [node name="Label" type="Label" parent="."]
 offset_left = -86.40496

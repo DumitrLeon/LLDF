@@ -2,7 +2,7 @@ extends State_enemy
 class_name Chasing
 
 func Enter():
-	pass
+	print("TI STO INSEGUENDO")
 
 func Exit():
 	pass
