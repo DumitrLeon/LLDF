@@ -5,6 +5,7 @@ var direction : int = 1
 
 func Enter():
 	direction = 1
+	anim.play("Walk")
 	
 func Exit():
 	pass
@@ -28,12 +29,15 @@ func Physics_process(delta: float) -> void:
 	
 	if not enemy.is_on_floor():
 		enemy.velocity.y += enemy.gravity
+	
 
 
 func _flip_direction(enemy):
 	direction *= -1
-	if direction:
+	if direction == -1:
 		enemy.sprite.flip_h = false
 	else:
 		enemy.sprite.flip_h = true
 	enemy.ground_check.position.x *= -1
+	enemy.view.position.x =  (enemy.view.position.x * -1) - enemy.view.find_child("CollisionShape2D").shape.size.x
+	

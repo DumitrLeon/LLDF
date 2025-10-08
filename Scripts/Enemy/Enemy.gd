@@ -7,3 +7,4 @@ class_name Enemy
 @onready var test : Area2D = $test
 @onready var ground_check : RayCast2D = $RayCast2D
 @onready var sprite : Sprite2D = $Sprite2D
+@onready var view : Area2D = $View
