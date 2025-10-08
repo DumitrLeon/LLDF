@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ictw8x784ppy"]
+[gd_scene load_steps=33 format=3 uid="uid://ct2ghvq1s4vcj"]
 
 [ext_resource type="Script" uid="uid://domreqs5cv4pa" path="res://Scripts/player.gd" id="1_dewec"]
 [ext_resource type="Texture2D" uid="uid://dvpxxb02iglcv" path="res://Assets/Player/Idle.png" id="1_rpqav"]
@@ -187,7 +187,8 @@ offset_bottom = -14.0
 theme_override_font_sizes/font_size = 10
 text = "none"
 
-[node name="Camera2D (disabled)" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -56)
 zoom = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -196,6 +197,7 @@ position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_kyqiw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_nn08x")
 animation = &"Jump_up"
 autoplay = "Idle"
