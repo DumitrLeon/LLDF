@@ -1,6 +1,7 @@
 extends Node
 class_name State_enemy
 
+signal Transitioned
 var enemy : Enemy
 var fsm : Enemy_fsm
 var anim : AnimationPlayer

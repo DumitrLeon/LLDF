@@ -30,6 +30,10 @@ func Physics_process(delta: float) -> void:
 	if not enemy.is_on_floor():
 		enemy.velocity.y += enemy.gravity
 	
+	for body in enemy.view.get_overlapping_bodies():
+		if body.is_in_group("Player"):
+			print("Porca madonna eccoti non ti trovavo!")
+			Transitioned.emit(self, "Chasing")
 
 
 func _flip_direction(enemy):

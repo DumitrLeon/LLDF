@@ -10,7 +10,7 @@ var enemy : Enemy
 func _ready() -> void:
 	enemy = get_parent()
 	for child in get_children():
-		if child is State:
+		if child is State_enemy:
 			states[child.name.to_lower()] = child
 			child.Transitioned.connect(on_child_connect)
 		if initial_state:
