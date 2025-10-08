@@ -3,8 +3,8 @@ class_name State
 
 @warning_ignore("unused_signal")
 signal Transitioned
-var player
-var anim
+var player : Player
+var anim : AnimatedSprite2D
 var StateMachine = FiniteStateMachine
 
 func _ready() -> void:

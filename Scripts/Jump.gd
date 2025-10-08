@@ -1,10 +1,14 @@
 extends Movement
 class_name Jump
 
-var frame_progress = 0
-
 func Enter():
 	player.velocity.y = player.jump_boost
+	if abs(player.velocity.x) < 0.1:
+		anim.play("Jump_up")
+	else:
+		anim.play("Jump_side")
+	
+	
 
 
 func Update(_delta: float):
@@ -18,9 +22,11 @@ func Physics_process(delta: float) -> void:
 	if check_floor():
 		Transitioned.emit(self, "idle")
 	
-	frame_progress = anim.frame_progress
-	if abs(player.velocity.x) < 0.1:
+	if player.dir == 0:
 		anim.play("Jump_up")
+		anim.stop()
+		anim.frame = 2
 	else:
 		anim.play("Jump_side")
-	anim.frame_progress = frame_progress
+		anim.stop()
+		anim.frame = 2

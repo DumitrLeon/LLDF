@@ -130,7 +130,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.8,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_lslt6")
 }, {
 "duration": 0.8,
@@ -179,6 +179,7 @@ animations = [{
 script = ExtResource("1_dewec")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -12.0
 offset_top = -28.0
 offset_right = 13.0
@@ -196,10 +197,8 @@ shape = SubResource("RectangleShape2D_kyqiw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nn08x")
-animation = &"Jump_side"
+animation = &"Jump_up"
 autoplay = "Idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_gntrk")

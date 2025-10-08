@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1oofy5jbf14u"]
+
+[ext_resource type="Texture2D" uid="uid://bubcqnyi12fli" path="res://icon.svg" id="1_1f0kj"]
+[ext_resource type="Script" uid="uid://buk86veypy4fo" path="res://Scripts/Enemy/Enemy.gd" id="1_afpow"]
+[ext_resource type="Script" uid="uid://c78ihmia20tsb" path="res://Scripts/Enemy/enemy_state_machine.gd" id="2_afpow"]
+[ext_resource type="Script" uid="uid://c1ph3lyxocgbq" path="res://Scripts/Enemy/patrolling.gd" id="4_287tu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_287tu"]
+size = Vector2(102, 104)
+
+[node name="Enemy" type="CharacterBody2D"]
+scale = Vector2(0.16202773, 0.1608604)
+script = ExtResource("1_afpow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1f0kj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_287tu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="EnemyStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_afpow")
+initial_state = NodePath("Patrolling")
+
+[node name="Patrolling" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("4_287tu")
+metadata/_custom_type_script = "uid://c1ph3lyxocgbq"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -86.40496
+offset_top = -136.76454
+offset_right = 80.59504
+offset_bottom = -81.76454
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/paragraph_spacing = 3
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 40
+text = "BOB"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(80.23316, 55.949127)
+scale = Vector2(5.684247, 1.2403886)
