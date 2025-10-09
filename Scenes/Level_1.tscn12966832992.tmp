@@ -86,5 +86,4 @@ tile_set = SubResource("TileSet_ptpgp")
 position = Vector2(-96, 501)
 
 [node name="Enemy" parent="." instance=ExtResource("3_vnunq")]
-position = Vector2(222, 432)
-facing = 1
+position = Vector2(188, 430)

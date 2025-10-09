@@ -7,8 +7,6 @@ func Enter():
 		anim.play("Jump_up")
 	else:
 		anim.play("Jump_side")
-	
-	
 
 
 func Update(_delta: float):
