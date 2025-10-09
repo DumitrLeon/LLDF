@@ -6,7 +6,7 @@ var direction : int
 var patroll_controls := false
 var temp
 
-var timer_fix : float = 0.5
+var timer_fix : float
 
 func Enter():
 	anim.play("Walk")
@@ -57,10 +57,12 @@ func Physics_process(delta: float) -> void:
 	
 	if (enemy.is_on_wall()) and (patroll_controls):
 		if timer_fix <= 0:
+			print("muro rilevato")
 			handle_flip(delta)
 	
 	if (not enemy.ground_check.is_colliding()) and (patroll_controls):
 		if timer_fix <= 0:
+			print("vuoto rilevato")
 			handle_flip(delta)
 	
 	if not enemy.is_on_floor():
@@ -84,7 +86,6 @@ func Physics_process(delta: float) -> void:
 			var hit = enemy.view_ray.get_collider()
 			if hit == player:
 				Transitioned.emit(self, "Chasing")
-	print(temp)
 	enemy.move_and_slide()
 
 func handle_flip(delta):

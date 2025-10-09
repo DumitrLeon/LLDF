@@ -179,13 +179,14 @@ animations = [{
 script = ExtResource("1_dewec")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -55)
+position = Vector2(0, -73)
 zoom = Vector2(3, 3)
 limit_enabled = false
 limit_smoothed = true
 position_smoothing_speed = 8.0
 drag_vertical_enabled = true
 drag_top_margin = 0.5
+drag_bottom_margin = 0.0
 editor_draw_drag_margin = true
 
 [node name="Label" type="Label" parent="."]
@@ -197,7 +198,7 @@ offset_bottom = -14.0
 theme_override_font_sizes/font_size = 10
 text = "none"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D2" type="Camera2D" parent="."]
 position = Vector2(0, -56)
 zoom = Vector2(3, 3)
 
