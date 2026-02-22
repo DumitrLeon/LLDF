@@ -4,6 +4,7 @@ class_name Player
 @export var speed = 50
 @export var jump_boost = -350
 @export var gravity = 20
+@export var friction = 50
 var dir = 0 #PER LA DIREZIONE WOWOWOWOWOWOWOEWOWOWOWOWOW
 
 var jump = false
