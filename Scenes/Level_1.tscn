@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://e6jk8np48fji"]
 
 [ext_resource type="Texture2D" uid="uid://c0qjmgsv8dcd7" path="res://Assets/TileSets/brick.png" id="1_nh7xm"]
-[ext_resource type="PackedScene" uid="uid://ct2ghvq1s4vcj" path="res://Scenes/Player.tscn" id="1_oiua3"]
+[ext_resource type="PackedScene" uid="uid://qi6fvdttff62" path="res://Scenes/Player.tscn" id="1_oiua3"]
 [ext_resource type="Texture2D" uid="uid://ceedvxffgqsj2" path="res://Assets/TileSets/Block.png" id="2_i63mn"]
 [ext_resource type="PackedScene" uid="uid://b1oofy5jbf14u" path="res://Scenes/enemy.tscn" id="3_vnunq"]
 [ext_resource type="Texture2D" uid="uid://bhk5klphr4fam" path="res://Assets/TileSets/TileMapTEST.png" id="5_j0k67"]
@@ -86,7 +86,7 @@ tile_set = SubResource("TileSet_ptpgp")
 position = Vector2(82, 474)
 
 [node name="Enemy" parent="." instance=ExtResource("3_vnunq")]
-position = Vector2(216.99998, 425.99997)
+position = Vector2(-75, 495.99997)
 facing = -1
 
 [node name="Enemy3" parent="." instance=ExtResource("3_vnunq")]

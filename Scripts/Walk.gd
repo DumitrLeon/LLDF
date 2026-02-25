@@ -17,5 +17,6 @@ func Update(_delta: float):
 
 func Physics_process(delta: float) -> void:
 	if not check_floor():
+		player.cojote_jump.start()
 		Transitioned.emit(self, "Idle_air")
 	

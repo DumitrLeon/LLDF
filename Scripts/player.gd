@@ -1,10 +1,12 @@
 extends CharacterBody2D
 class_name Player
 
-@export var speed = 50
+@export var walking_speed = 70
+@export var sprinting_speed = 140
 @export var jump_boost = -350
 @export var gravity = 20
-@export var friction = 50
+@export var friction = 350
+@onready var cojote_jump: Timer = $Timers/CojoteJump
 var dir = 0 #PER LA DIREZIONE WOWOWOWOWOWOWOEWOWOWOWOWOW
 
 var jump = false
@@ -13,7 +15,7 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	dir = Input.get_axis("left", "right")
+	dir = Input.get_axis("left", "right") #prende input per dir (1 o -1) 
 	if jump:
 		jump = false
 		velocity.y = jump_boost

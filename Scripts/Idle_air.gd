@@ -7,6 +7,8 @@ func Enter():
 
 
 func Update(_delta: float):
+	if player.cojote_jump.time_left > 0:
+		check_jump()
 	super.Update(_delta)
 
 

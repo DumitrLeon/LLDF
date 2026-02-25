@@ -57,12 +57,12 @@ func Physics_process(delta: float) -> void:
 	
 	if (enemy.is_on_wall()) and (patroll_controls):
 		if timer_fix <= 0:
-			print("muro rilevato")
+			#print("muro rilevato")
 			handle_flip(delta)
 	
 	if (not enemy.ground_check.is_colliding()) and (patroll_controls):
 		if timer_fix <= 0:
-			print("vuoto rilevato")
+			#print("vuoto rilevato")
 			handle_flip(delta)
 	
 	if not enemy.is_on_floor():

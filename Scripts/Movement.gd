@@ -6,11 +6,19 @@ func Enter():
 
 
 func Update(_delta: float):
+	#basic friction logic, friction più lenta se sprinti
 	if Input.is_action_pressed("sprint"):
-		player.velocity.x = player.dir * player.speed * 3
+		if ((player.velocity.x < -0.2) and (player.dir == 1)) or ((player.velocity.x > 0.2) and (player.dir == -1)):
+			player.velocity.x = move_toward(player.velocity.x, 0.0, player.friction*3 * _delta)
+		else:
+			player.velocity.x = move_toward(player.velocity.x, player.sprinting_speed * player.dir, player.friction/1.5 * _delta)
 	else:
-		player.velocity.x = player.dir * player.speed
-
+		if ((player.velocity.x < -0.2) and (player.dir == 1)) or ((player.velocity.x > 0.2) and (player.dir == -1)):
+			player.velocity.x = move_toward(player.velocity.x, 0.0, player.friction*2 * _delta)
+		else:
+			player.velocity.x = move_toward(player.velocity.x, player.walking_speed * player.dir, player.friction * _delta)
+	#damn sembra in casinato ma ha senso giuro (a bellini non piacerebbe)
+	
 
 func Physics_process(delta: float) -> void:
 	pass

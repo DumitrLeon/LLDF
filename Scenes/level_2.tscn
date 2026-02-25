@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b1oofy5jbf14u" path="res://Scenes/enemy.tscn" id="3_cggpd"]
 [ext_resource type="Texture2D" uid="uid://ceedvxffgqsj2" path="res://Assets/TileSets/Block.png" id="4_055b2"]
 [ext_resource type="Texture2D" uid="uid://bhk5klphr4fam" path="res://Assets/TileSets/TileMapTEST.png" id="5_2mgoq"]
-[ext_resource type="PackedScene" uid="uid://ct2ghvq1s4vcj" path="res://Scenes/player.tscn" id="6_cggpd"]
+[ext_resource type="PackedScene" uid="uid://ct2ghvq1s4vcj" path="res://Scenes/Player.tscn" id="6_cggpd"]
 [ext_resource type="Texture2D" uid="uid://c6dh6dvgu36gy" path="res://Assets/light/light_form.png" id="7_055b2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhnj4"]
