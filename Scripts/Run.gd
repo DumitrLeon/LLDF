@@ -7,6 +7,7 @@ func Enter():
 
 
 func Update(_delta: float):
+	check_slide()
 	check_jump()
 	super.Update(_delta)
 	if (player.dir == 0) and (not abs(player.velocity.x) > 0.1):

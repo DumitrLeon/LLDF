@@ -7,6 +7,7 @@ func Enter():
 
 
 func Update(_delta: float):
+	check_slide()
 	check_jump()
 	if player.dir != 0:
 		Transitioned.emit(self, "Walk")

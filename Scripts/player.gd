@@ -7,6 +7,7 @@ class_name Player
 @export var gravity = 20
 @export var friction = 350
 @onready var cojote_jump: Timer = $Timers/CojoteJump
+@onready var slide_timer: Timer = $Timers/Slide_timer
 var dir = 0 #PER LA DIREZIONE WOWOWOWOWOWOWOEWOWOWOWOWOW
 
 var jump = false
@@ -18,7 +19,6 @@ func _process(delta: float) -> void:
 	dir = Input.get_axis("left", "right") #prende input per dir (1 o -1) 
 	if jump:
 		jump = false
-		velocity.y = jump_boost
 
 func _physics_process(delta: float) -> void:
 	if velocity.x > 0:

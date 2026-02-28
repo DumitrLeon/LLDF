@@ -5,7 +5,6 @@ class_name Idle_air
 func Enter():
 	anim.play("Idle_air")
 
-
 func Update(_delta: float):
 	if player.cojote_jump.time_left > 0:
 		check_jump()
