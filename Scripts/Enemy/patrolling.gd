@@ -4,7 +4,7 @@ class_name Patrolling
 var direction : int
 
 var patroll_controls := false
-var temp
+var temp = 0.0
 
 var timer_fix : float
 

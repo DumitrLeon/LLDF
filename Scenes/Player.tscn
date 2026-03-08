@@ -707,7 +707,7 @@ render_target_update_mode = 4
 
 [node name="part_1" type="Line2D" parent="Scarf/SubViewportContainer/SubViewport"]
 position = Vector2(0.755, 0)
-points = PackedVector2Array(0, 0, 132, 22)
+points = PackedVector2Array(50.245, 42, 36.245, 62)
 width = 3.0
 width_curve = SubResource("Curve_fd4e3")
 joint_mode = 2
