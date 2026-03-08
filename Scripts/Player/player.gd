@@ -5,7 +5,7 @@ class_name Player
 @export var sprinting_speed = 140
 @export var jump_boost = -350
 @export var gravity = 20
-@export var friction = 350
+@export var friction = 1000
 @onready var cojote_jump: Timer = $Timers/CojoteJump
 @onready var slide_timer: Timer = $Timers/Slide_timer
 var dir = 0 #PER LA DIREZIONE WOWOWOWOWOWOWOEWOWOWOWOWOW
@@ -22,8 +22,8 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if velocity.x > 0:
-		$AnimatedSprite2D.flip_h = false
+		$Player_sprite.flip_h = false
 	elif velocity.x < 0:
-		$AnimatedSprite2D.flip_h = true
+		$Player_sprite.flip_h = true
 	
 	move_and_slide()

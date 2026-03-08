@@ -9,7 +9,7 @@ func Update(_delta: float):
 	#basic friction logic, friction più lenta se sprinti
 	if Input.is_action_pressed("sprint"):
 		if ((player.velocity.x < -0.2) and (player.dir == 1)) or ((player.velocity.x > 0.2) and (player.dir == -1)):
-			player.velocity.x = move_toward(player.velocity.x, 0.0, player.friction*3 * _delta)
+			player.velocity.x = move_toward(player.velocity.x, 0.0, player.friction*6 * _delta)
 		else:
 			player.velocity.x = move_toward(player.velocity.x, player.sprinting_speed * player.dir, player.friction/1.5 * _delta)
 	else:
@@ -24,7 +24,7 @@ func Physics_process(delta: float) -> void:
 	pass
 
 func check_slide():
-	if (Input.is_action_pressed("down")) and (Input.is_action_pressed("jump")) and (player.slide_timer.time_left == 0):
+	if ((Input.is_action_pressed("down")) and (Input.is_action_pressed("jump")) and (player.slide_timer.time_left == 0)) or (Input.is_action_just_pressed("slide")):
 		player.slide_timer.start()
 		Transitioned.emit(self, "Slide")
 

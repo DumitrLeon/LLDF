@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i5v8pfls8sjb"
-path="res://.godot/imported/Run.png-832b3d0bb5a1213fc4b78f583158bbc7.ctex"
+uid="uid://cmtc6xhecs62f"
+path="res://.godot/imported/Test_scarf.png-64d7c3ca35ccb751aefa105a5429bc0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/light/Run.png"
-dest_files=["res://.godot/imported/Run.png-832b3d0bb5a1213fc4b78f583158bbc7.ctex"]
+source_file="res://Assets/Player/Scarfs/Test_scarf.png"
+dest_files=["res://.godot/imported/Test_scarf.png-64d7c3ca35ccb751aefa105a5429bc0f.ctex"]
 
 [params]
 

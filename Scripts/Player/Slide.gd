@@ -9,7 +9,7 @@ func Enter():
 	anim.play("Slide")
 	timer = 0.0
 	if player.dir == 0:
-		direction = not anim.flip_h
+		direction = not player_sprite.flip_h
 	else:
 		direction = (true if player.dir == 1 else false)
 

@@ -9,10 +9,10 @@ func Update(_delta: float):
 	super.Update(_delta)
 	player.slide_timer.start(0.0)
 	player.slide_timer.stop()
-	if player.velocity.y > -30:
+	if player.velocity.y > -60:
 		Transitioned.emit(self, "Idle_air")
 	
-	if Input.is_action_just_released("jump"):
+	if not Input.is_action_pressed("jump"):
 		player.velocity.y = move_toward(player.velocity.y, 0.0, 200)
 
 
@@ -22,9 +22,5 @@ func Physics_process(delta: float) -> void:
 		Transitioned.emit(self, "idle")
 	if player.dir == 0:
 		anim.play("Jump_up")
-		anim.stop()
-		anim.frame = 2
 	else:
 		anim.play("Jump_side")
-		anim.stop()
-		anim.frame = 2

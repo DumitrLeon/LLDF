@@ -4,12 +4,14 @@ class_name State
 @warning_ignore("unused_signal")
 signal Transitioned
 var player : Player
-var anim : AnimatedSprite2D
+var anim : AnimationPlayer
+var player_sprite: Sprite2D
 var StateMachine = FiniteStateMachine
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
-	anim = player.find_child("AnimatedSprite2D")
+	player_sprite = player.find_child("Player_sprite")
+	anim = player.find_child("AnimationPlayer")
 	StateMachine = get_parent()
 
 func Enter():
