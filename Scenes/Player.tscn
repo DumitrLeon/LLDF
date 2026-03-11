@@ -88,7 +88,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Scarf/Marker2D:position")
+tracks/5/path = NodePath("Scarf/Scarf_head_marker:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -164,7 +164,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Scarf/Marker2D:position")
+tracks/5/path = NodePath("Scarf/Scarf_head_marker:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -240,14 +240,14 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Scarf/Marker2D:position")
+tracks/5/path = NodePath("Scarf/Scarf_head_marker:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.1, 0.23333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.23333333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.564, 1.427), Vector2(0.564, 1.427), Vector2(1.034, -7.202), Vector2(0.727, -7.202)]
+"values": [Vector2(-0.066, -2.682), Vector2(1.034, -7.202), Vector2(0.727, -7.202)]
 }
 
 [sub_resource type="Animation" id="Animation_igrcy"]
@@ -316,7 +316,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Scarf/Marker2D:position")
+tracks/5/path = NodePath("Scarf/Scarf_head_marker:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -367,7 +367,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Scarf/Marker2D:position")
+tracks/3/path = NodePath("Scarf/Scarf_head_marker:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -468,7 +468,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Scarf/Marker2D:position")
+tracks/5/path = NodePath("Scarf/Scarf_head_marker:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -543,7 +543,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Scarf/Marker2D:position")
+tracks/5/path = NodePath("Scarf/Scarf_head_marker:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -596,14 +596,14 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Scarf/Marker2D:position")
+tracks/3/path = NodePath("Scarf/Scarf_head_marker:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.36666667, 0.43333334, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -7), Vector2(1, -8), Vector2(2.1015244, -8.593897), Vector2(2.1145978, -7.504697), Vector2(2.1145978, -7.504697), Vector2(0, -7)]
+"values": [Vector2(1.465, -7), Vector2(1, -7.01), Vector2(2.102, -7.579), Vector2(2.1145978, -7.504697), Vector2(2.1145978, -7.504697), Vector2(1.465, -7)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qqcod"]
@@ -618,9 +618,9 @@ _data = {
 &"Walk": SubResource("Animation_fd4e3")
 }
 
-[sub_resource type="Curve" id="Curve_fd4e3"]
-_limits = [0.0, 5.0, 0.0, 1.0]
-_data = [Vector2(0.37121207, 0.78651714), 0.0, 0.0, 0, 0, Vector2(1, 1.6853933), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_qqcod"]
+_limits = [0.0, 4.0, 0.0, 1.0]
+_data = [Vector2(0.38636363, 0.6741576), 0.0, 2.0856748, 0, 0, Vector2(1, 1.7078655), 1.4337078, 0.0, 0, 0]
 point_count = 2
 
 [node name="Player2" type="CharacterBody2D" groups=["Player"]]
@@ -691,31 +691,46 @@ libraries = {
 
 [node name="Scarf" type="Node2D" parent="."]
 script = ExtResource("16_fd4e3")
-points_count = 10
+iterations = 30
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Scarf"]
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 462.0
-offset_bottom = 462.0
+show_behind_parent = true
+clip_children = 2
+texture_filter = 1
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 312.0
+offset_bottom = 312.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="Scarf/SubViewportContainer"]
+transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 4
 
 [node name="part_1" type="Line2D" parent="Scarf/SubViewportContainer/SubViewport"]
+light_mask = 3
+visibility_layer = 3
+z_index = 1
 position = Vector2(0.755, 0)
-points = PackedVector2Array(50.245, 42, 36.245, 62)
+points = PackedVector2Array(48.245, 32, 42.251442, 46.983902, 36.245, 62)
 width = 3.0
-width_curve = SubResource("Curve_fd4e3")
+width_curve = SubResource("Curve_qqcod")
 joint_mode = 2
 begin_cap_mode = 2
-round_precision = 5
 
-[node name="Marker2D" type="Marker2D" parent="Scarf"]
+[node name="Scarf_head_marker" type="Marker2D" parent="Scarf"]
+z_index = 1
 position = Vector2(2, -6)
+
+[node name="Anchor_marker" type="Marker2D" parent="Scarf"]
+z_index = 1
+position = Vector2(2, -6)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Scarf"]
 
 [node name="Player_sprite" type="Sprite2D" parent="."]
 position = Vector2(1.0152512, 0)

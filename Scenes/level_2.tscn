@@ -1,12 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://xc3qtqojeibb"]
+[gd_scene load_steps=15 format=4 uid="uid://xc3qtqojeibb"]
 
 [ext_resource type="Texture2D" uid="uid://c0qjmgsv8dcd7" path="res://Assets/TileSets/brick.png" id="1_v36qu"]
 [ext_resource type="Texture2D" uid="uid://chreulpeim47j" path="res://Assets/TileSets/decorazione.png" id="2_cggpd"]
 [ext_resource type="PackedScene" uid="uid://b1oofy5jbf14u" path="res://Scenes/enemy.tscn" id="3_cggpd"]
 [ext_resource type="Texture2D" uid="uid://ceedvxffgqsj2" path="res://Assets/TileSets/Block.png" id="4_055b2"]
 [ext_resource type="Texture2D" uid="uid://bhk5klphr4fam" path="res://Assets/TileSets/TileMapTEST.png" id="5_2mgoq"]
-[ext_resource type="PackedScene" uid="uid://ct2ghvq1s4vcj" path="res://Scenes/Player.tscn" id="6_cggpd"]
-[ext_resource type="Texture2D" uid="uid://c6dh6dvgu36gy" path="res://Assets/light/light_form.png" id="7_055b2"]
+[ext_resource type="PackedScene" uid="uid://qi6fvdttff62" path="res://Scenes/player.tscn" id="6_cggpd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhnj4"]
 texture = ExtResource("1_v36qu")
@@ -103,57 +102,14 @@ position = Vector2(-35, 2)
 tile_map_data = PackedByteArray("AADz/wEAAAAAAAAAAAD3/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD//wEAAAAAAAAAAAADAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_2mgoq")
 
+[node name="Player" parent="." instance=ExtResource("6_cggpd")]
+position = Vector2(-476, 94)
+
 [node name="Enemy" parent="." instance=ExtResource("3_cggpd")]
 position = Vector2(-30.000008, 93)
 scale = Vector2(0.33, 0.33)
 
-[node name="Player" parent="." instance=ExtResource("6_cggpd")]
-position = Vector2(-476, 94)
-
 [node name="Platforms" type="Node" parent="."]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Platforms"]
-color = Color(0.34781694, 0.34781697, 0.3478169, 1)
-
-[node name="PointLight2D" type="PointLight2D" parent="Platforms/CanvasModulate"]
-position = Vector2(-432, 51.499996)
-scale = Vector2(0.6728996, 1.0181863)
-color = Color(0.5254902, 0.5137255, 0.7294118, 1)
-energy = 1.43
-shadow_enabled = true
-shadow_color = Color(0.006268747, 0.006134032, 0.0006884574, 0)
-texture = ExtResource("7_055b2")
-texture_scale = 4.88
-
-[node name="PointLight2D2" type="PointLight2D" parent="Platforms/CanvasModulate"]
-position = Vector2(-47.99991, 51.999996)
-scale = Vector2(0.6728996, 1.0181863)
-color = Color(0.5254902, 0.5137255, 0.7294118, 1)
-energy = 1.43
-shadow_enabled = true
-shadow_color = Color(0.006268747, 0.006134032, 0.0006884574, 0)
-texture = ExtResource("7_055b2")
-texture_scale = 4.88
-
-[node name="PointLight2D3" type="PointLight2D" parent="Platforms/CanvasModulate"]
-position = Vector2(80.000015, 51.999996)
-scale = Vector2(0.6728996, 1.0181863)
-color = Color(0.5254902, 0.5137255, 0.7294118, 1)
-energy = 1.43
-shadow_enabled = true
-shadow_color = Color(0.006268747, 0.006134032, 0.0006884574, 0)
-texture = ExtResource("7_055b2")
-texture_scale = 4.88
-
-[node name="PointLight2D4" type="PointLight2D" parent="Platforms/CanvasModulate"]
-position = Vector2(337.00006, 50.999996)
-scale = Vector2(0.6728996, 1.0181863)
-color = Color(0.5254902, 0.5137255, 0.7294118, 1)
-energy = 1.43
-shadow_enabled = true
-shadow_color = Color(0.006268747, 0.006134032, 0.0006884574, 0)
-texture = ExtResource("7_055b2")
-texture_scale = 4.88
 
 [node name="Bricks" type="TileMapLayer" parent="Platforms"]
 position = Vector2(-19, 18)
