@@ -21,6 +21,7 @@ func Update(_delta: float):
 		Transitioned.emit(self, "Idle")
 	
 	if Input.is_action_just_pressed("jump"):
+		player.velocity.x += (-170 if player.velocity.x < 0 else 170)
 		Transitioned.emit(self, "jump")
 
 func Physics_process(delta: float) -> void:

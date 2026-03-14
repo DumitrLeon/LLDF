@@ -24,7 +24,7 @@ func Physics_process(delta: float) -> void:
 	pass
 
 func check_slide():
-	if ((Input.is_action_pressed("down")) and (Input.is_action_pressed("jump")) and (player.slide_timer.time_left == 0)) or (Input.is_action_just_pressed("slide")):
+	if ((Input.is_action_pressed("down")) and (Input.is_action_pressed("jump")) and (player.slide_timer.time_left == 0)) or ((Input.is_action_just_pressed("slide")) and (player.slide_timer.time_left == 0)):
 		player.slide_timer.start()
 		Transitioned.emit(self, "Slide")
 

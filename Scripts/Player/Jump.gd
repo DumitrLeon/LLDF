@@ -7,8 +7,6 @@ func Enter():
 
 func Update(_delta: float):
 	super.Update(_delta)
-	player.slide_timer.start(0.0)
-	player.slide_timer.stop()
 	if player.velocity.y > -60:
 		Transitioned.emit(self, "Idle_air")
 	

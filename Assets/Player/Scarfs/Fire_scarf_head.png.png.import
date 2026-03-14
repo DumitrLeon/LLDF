@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmtc6xhecs62f"
-path="res://.godot/imported/Test_scarf.png-64d7c3ca35ccb751aefa105a5429bc0f.ctex"
+uid="uid://bn0fkvq8lg716"
+path="res://.godot/imported/Fire_scarf_head.png.png-d3a4deeef77566dd455f391bcf7a7c87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Scarfs/Test_scarf.png"
-dest_files=["res://.godot/imported/Test_scarf.png-64d7c3ca35ccb751aefa105a5429bc0f.ctex"]
+source_file="res://Assets/Player/Scarfs/Fire_scarf_head.png.png"
+dest_files=["res://.godot/imported/Fire_scarf_head.png.png-d3a4deeef77566dd455f391bcf7a7c87.ctex"]
 
 [params]
 

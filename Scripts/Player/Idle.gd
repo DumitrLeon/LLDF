@@ -9,6 +9,11 @@ func Enter():
 func Update(_delta: float):
 	check_slide()
 	check_jump()
+	
+	#GODMODE
+	if Input.is_action_just_pressed("GodMode"):
+		Transitioned.emit(self, "GodMode")
+	
 	if player.dir != 0:
 		Transitioned.emit(self, "Walk")
 	

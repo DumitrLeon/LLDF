@@ -82,6 +82,7 @@ sources/0 = SubResource("TileSetAtlasSource_aur7v")
 size = Vector2(7030, 239)
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(0, -1)
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -106,7 +107,7 @@ tile_map_data = PackedByteArray("AABHACkAAAAAAAAAAABHACoAAAAAAAAAACBIACkAAAABAAA
 tile_set = SubResource("TileSet_ptpgp")
 
 [node name="Player" parent="." instance=ExtResource("1_oiua3")]
-position = Vector2(-5, 494)
+position = Vector2(-12, 512)
 
 [node name="Enemy3" parent="." instance=ExtResource("3_vnunq")]
 position = Vector2(-159.00002, 645)
