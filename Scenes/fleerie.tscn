@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://7jk2c54xegsi"]
+
+[ext_resource type="Texture2D" uid="uid://kdxx30idain1" path="res://Assets/Enemies/the_fleerie_0001.png" id="1_v6xso"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xso"]
+
+[node name="fleerie" type="CharacterBody2D"]
+
+[node name="TheFleerie0001" type="Sprite2D" parent="."]
+texture = ExtResource("1_v6xso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 6)
+shape = SubResource("RectangleShape2D_v6xso")

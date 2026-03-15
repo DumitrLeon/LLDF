@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://qi6fvdttff62"]
+[gd_scene load_steps=34 format=3 uid="uid://d3l68ionyr0b"]
 
 [ext_resource type="Script" uid="uid://domreqs5cv4pa" path="res://Scripts/Player/player.gd" id="1_dewec"]
 [ext_resource type="Texture2D" uid="uid://37q8a3nbn0x8" path="res://Assets/Player/Walk.png" id="2_kyqiw"]
@@ -17,9 +17,10 @@
 [ext_resource type="Script" uid="uid://bejrhft8o86lb" path="res://Scripts/Player/Slide.gd" id="15_h4iuc"]
 [ext_resource type="Script" uid="uid://dw4bgvqtwb8n8" path="res://Scenes/scarf.gd" id="16_fd4e3"]
 [ext_resource type="Texture2D" uid="uid://c8pajl0ln8lm2" path="res://Assets/Player/Scivolo.png" id="16_qqcod"]
-[ext_resource type="Texture2D" uid="uid://d1pxmgjsksm8m" path="res://Assets/Player/Scarfs/Basic_scarf.png" id="18_igrcy"]
 [ext_resource type="Script" uid="uid://5jaof7xitvxb" path="res://Scenes/scarf_skin_manager.gd" id="18_l6n3p"]
+[ext_resource type="Texture2D" uid="uid://djdfw6b810di4" path="res://Assets/Player/Scarfs/Fire_scarf.png" id="19_60mlk"]
 [ext_resource type="Texture2D" uid="uid://cqywbrsgs2cm6" path="res://Assets/Player/Scarfs/Basic_scarf_head.png" id="19_fs7ks"]
+[ext_resource type="Texture2D" uid="uid://bn0fkvq8lg716" path="res://Assets/Player/Scarfs/Fire_scarf_head.png.png" id="20_i4ail"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(6, 31)
@@ -103,26 +104,26 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Player_sprite/Scarf_head:rotation")
+tracks/6/path = NodePath("Player_sprite/Scarf_head:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Player_sprite/Scarf_head:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.53333336, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-0.325, -8.15), Vector2(-0.325, -8.34), Vector2(-0.325, -8.34), Vector2(-0.325, -8.15)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player_sprite/Scarf_head:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_ukyrk"]
@@ -203,26 +204,26 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Player_sprite/Scarf_head:position")
+tracks/6/path = NodePath("Player_sprite/Scarf_head:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.003050238, 0.33857805, 0.4514374, 0.6863069, 0.820518),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.45, -5.295), Vector2(0.45, -5.295), Vector2(0.45, -4.745), Vector2(0.45, -4.745), Vector2(0.45, -5.295)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Player_sprite/Scarf_head:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player_sprite/Scarf_head:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.003050238, 0.33857805, 0.4514374, 0.6863069, 0.820518),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.45, -5.295), Vector2(0.45, -5.295), Vector2(0.45, -4.745), Vector2(0.45, -4.745), Vector2(0.45, -5.295)]
 }
 
 [sub_resource type="Animation" id="Animation_qqcod"]
@@ -303,26 +304,26 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Player_sprite/Scarf_head:position")
+tracks/6/path = NodePath("Player_sprite/Scarf_head:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.0010849475, 0.097645275, 0.1, 0.23333335, 0.24631411),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.44, 3.992), Vector2(0.44, 3.992), Vector2(2.165, -6), Vector2(2.165, -6), Vector2(2.265, -6)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Player_sprite/Scarf_head:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0.0010849475, 0.09763093, 0.10000001),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.8185594191853401, 0.8185594191853401, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player_sprite/Scarf_head:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0010849475, 0.097645275, 0.1, 0.23333335, 0.24631411),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.44, 3.992), Vector2(0.44, 3.992), Vector2(2.165, -6), Vector2(2.165, -6), Vector2(2.265, -6)]
 }
 
 [sub_resource type="Animation" id="Animation_igrcy"]
@@ -403,26 +404,26 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Player_sprite/Scarf_head:rotation")
+tracks/6/path = NodePath("Player_sprite/Scarf_head:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.099744625, 0.10000001, 0.26659822, 0.27175894),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.8185594191853401, 0.8185594191853401, -0.8168140899333465, -0.8168140899333465, -0.4660029102824858]
+"values": [Vector2(0.18, 3.975), Vector2(0.18, 3.975), Vector2(1.535, -7.205), Vector2(1.535, -7.205), Vector2(1.535, -7.615)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Player_sprite/Scarf_head:position")
+tracks/7/path = NodePath("Player_sprite/Scarf_head:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.099744625, 0.10000001, 0.26659822, 0.27175894),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.18, 3.975), Vector2(0.18, 3.975), Vector2(1.535, -7.205), Vector2(1.535, -7.205), Vector2(1.535, -7.615)]
+"values": [0.8185594191853401, 0.8185594191853401, -0.8168140899333465, -0.8168140899333465, -0.4660029102824858]
 }
 
 [sub_resource type="Animation" id="Animation_tx1dd"]
@@ -502,26 +503,26 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Player_sprite/Scarf_head:rotation")
+tracks/6/path = NodePath("Player_sprite/Scarf_head:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(-0.32500005, -8.415)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Player_sprite/Scarf_head:position")
+tracks/7/path = NodePath("Player_sprite/Scarf_head:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-0.32500005, -8.415)]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_fs7ks"]
@@ -603,26 +604,26 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Player_sprite/Scarf_head:position")
+tracks/6/path = NodePath("Player_sprite/Scarf_head:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.07992102, 0.26666668),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(4.845, -6.025), Vector2(4.845, -6.025), Vector2(4.845, -6.665), Vector2(4.845, -6.665)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Player_sprite/Scarf_head:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.3508111796508606]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player_sprite/Scarf_head:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.07992102, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4.845, -6.025), Vector2(4.845, -6.025), Vector2(4.845, -6.665), Vector2(4.845, -6.665)]
 }
 
 [sub_resource type="Animation" id="Animation_l6n3p"]
@@ -702,26 +703,26 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Player_sprite/Scarf_head:position")
+tracks/6/path = NodePath("Player_sprite/Scarf_head:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.033097617, 0.033333335, 0.06688273, 0.0718442),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.125, 7.29), Vector2(0.125, 7.29), Vector2(-6.075, 13.3), Vector2(-6.075, 13.3), Vector2(-6.385, 12.63)]
+"values": [0.9930923443847732, 0.9930923443847732, -0.3508111796508606, -0.3508111796508606, -0.3508111796508606]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Player_sprite/Scarf_head:rotation")
+tracks/7/path = NodePath("Player_sprite/Scarf_head:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.033097617, 0.033333335, 0.06688273, 0.0718442),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.9930923443847732, 0.9930923443847732, -0.3508111796508606, -0.3508111796508606, -0.3508111796508606]
+"values": [Vector2(0.125, 7.29), Vector2(0.125, 7.29), Vector2(-6.075, 13.3), Vector2(-6.075, 13.3), Vector2(-6.385, 12.63)]
 }
 
 [sub_resource type="Animation" id="Animation_fd4e3"]
@@ -779,26 +780,26 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Player_sprite/Scarf_head:position")
+tracks/4/path = NodePath("Player_sprite/Scarf_head:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.14163695, 0.26666668, 0.28600517, 0.36666667, 0.40360045, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2.38, -6), Vector2(2.38, -6), Vector2(3.18, -7), Vector2(3.18, -7), Vector2(4, -7), Vector2(4, -7), Vector2(4, -6), Vector2(4, -6)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Player_sprite/Scarf_head:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player_sprite/Scarf_head:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.14163695, 0.26666668, 0.28600517, 0.36666667, 0.40360045, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.38, -6), Vector2(2.38, -6), Vector2(3.18, -7), Vector2(3.18, -7), Vector2(4, -7), Vector2(4, -7), Vector2(4, -6), Vector2(4, -6)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qqcod"]
@@ -821,6 +822,12 @@ point_count = 2
 [sub_resource type="SpriteFrames" id="SpriteFrames_l6n3p"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_i4ail")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fs7ks")
+}, {
 "duration": 1.0,
 "texture": ExtResource("19_fs7ks")
 }],
@@ -935,7 +942,7 @@ position = Vector2(150.755, 150)
 points = PackedVector2Array(48.245, 32, 42.251442, 46.983902, 36.245, 62)
 width = 3.0
 width_curve = SubResource("Curve_qqcod")
-texture = ExtResource("18_igrcy")
+texture = ExtResource("19_60mlk")
 texture_mode = 2
 joint_mode = 2
 begin_cap_mode = 2
