@@ -43,7 +43,7 @@ func _ready() -> void:
 	part.points = points
 
 func _physics_process(delta: float) -> void:
-	if player.dir == 0:
+	if player.velocity == Vector2.ZERO:
 		physic_timer += delta
 	else:
 		physic_timer = 0.0
@@ -81,7 +81,6 @@ func solve_world_collisions():
 		if result:
 			var dir: Vector2 = to_pos - result.position
 			var length = dir.length()
-			
 			points[i] += result.normal * (length if length > 0 else 0.1)
 
 func verlet_step(delta):

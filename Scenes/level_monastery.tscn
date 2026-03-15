@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://cl2dvpe0u7vm3"]
 
 [ext_resource type="Texture2D" uid="uid://c0qjmgsv8dcd7" path="res://Assets/TileSets/brick.png" id="1_ps8la"]
-[ext_resource type="PackedScene" uid="uid://d3l68ionyr0b" path="res://Scenes/player.tscn" id="1_q7om7"]
+[ext_resource type="PackedScene" uid="uid://qi6fvdttff62" path="res://Scenes/player.tscn" id="1_q7om7"]
 [ext_resource type="Texture2D" uid="uid://s6vm8q5n535w" path="res://Assets/TileSets/floor_monastery.png" id="2_q7om7"]
 [ext_resource type="Texture2D" uid="uid://chreulpeim47j" path="res://Assets/TileSets/decorazione.png" id="3_a7kfy"]
 
