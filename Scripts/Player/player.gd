@@ -3,11 +3,15 @@ class_name Player
 
 @export var walking_speed = 70
 @export var sprinting_speed = 140
-@export var jump_boost = -350
+@export var jump_boost = -360
 @export var gravity = 17
 @export var friction = 500
 @onready var cojote_jump: Timer = $Timers/CojoteJump
 @onready var slide_timer: Timer = $Timers/Slide_timer
+
+#TESTING PURPOSIESSSS
+var last_check_point: Vector2 = Vector2(-3166.0, 490.0)
+
 var dir = 0 #PER LA DIREZIONE WOWOWOWOWOWOWOEWOWOWOWOWOW
 
 var jump = false
