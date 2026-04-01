@@ -20,17 +20,17 @@
 [ext_resource type="Script" uid="uid://dw4bgvqtwb8n8" path="res://Scripts/scarf.gd" id="16_fd4e3"]
 [ext_resource type="Texture2D" uid="uid://c8pajl0ln8lm2" path="res://Assets/Player/Scivolo.png" id="16_qqcod"]
 [ext_resource type="Texture2D" uid="uid://bfwf5qv1dduyu" path="res://Assets/Player/Idle_Lup.png" id="17_olqyp"]
+[ext_resource type="Texture2D" uid="uid://d1pxmgjsksm8m" path="res://Assets/Player/Scarfs/Basic_scarf.png" id="18_igrcy"]
 [ext_resource type="Script" uid="uid://5jaof7xitvxb" path="res://Scripts/scarf_skin_manager.gd" id="18_l6n3p"]
 [ext_resource type="Texture2D" uid="uid://c0uubg28m86id" path="res://Assets/Player/Idle_Ldown.png" id="18_wpjfl"]
+[ext_resource type="Texture2D" uid="uid://cqywbrsgs2cm6" path="res://Assets/Player/Scarfs/Basic_scarf_head.png" id="19_fs7ks"]
 [ext_resource type="Texture2D" uid="uid://vlv0b3sx4tyo" path="res://Assets/Player/Roll.png" id="19_i2e8t"]
-[ext_resource type="Texture2D" uid="uid://djdfw6b810di4" path="res://Assets/Player/Scarfs/Fire_scarf.png" id="24_70hv0"]
-[ext_resource type="Texture2D" uid="uid://bn0fkvq8lg716" path="res://Assets/Player/Scarfs/Fire_scarf_head.png.png" id="25_8flut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(6, 30)
 
 [sub_resource type="Animation" id="Animation_8flut"]
-resource_name = "Attack_combo_1"
+resource_name = "Basic_combo_1"
 length = 0.65
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -123,14 +123,11 @@ tracks/7/path = NodePath("StateMachine/Combat")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.175, 0.53333336, 0.65),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.3, 0.65),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"on_attack_reload"
-}, {
-"args": [],
-"method": &"fix_finish_physics"
 }, {
 "args": [],
 "method": &"on_attack_finished"
@@ -138,7 +135,7 @@ tracks/7/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_u7x0b"]
-resource_name = "Attack_combo_2"
+resource_name = "Basic_combo_2"
 length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -231,14 +228,11 @@ tracks/7/path = NodePath("StateMachine/Combat")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.20833333, 0.56666666, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"on_attack_reload"
-}, {
-"args": [],
-"method": &"fix_finish_physics"
 }, {
 "args": [],
 "method": &"on_attack_finished"
@@ -246,7 +240,7 @@ tracks/7/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_utwlt"]
-resource_name = "Attack_combo_3"
+resource_name = "Basic_combo_3"
 length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -339,14 +333,11 @@ tracks/7/path = NodePath("StateMachine/Combat")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.4, 0.6333333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"on_attack_reload"
-}, {
-"args": [],
-"method": &"fix_finish_physics"
 }, {
 "args": [],
 "method": &"on_attack_finished"
@@ -1432,9 +1423,9 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qqcod"]
 _data = {
-&"Attack_combo_1": SubResource("Animation_8flut"),
-&"Attack_combo_2": SubResource("Animation_u7x0b"),
-&"Attack_combo_3": SubResource("Animation_utwlt"),
+&"Basic_combo_1": SubResource("Animation_8flut"),
+&"Basic_combo_2": SubResource("Animation_u7x0b"),
+&"Basic_combo_3": SubResource("Animation_utwlt"),
 &"Idle": SubResource("Animation_pu2lt"),
 &"Idle_Ldown": SubResource("Animation_bi64h"),
 &"Idle_Lup": SubResource("Animation_wpjfl"),
@@ -1454,7 +1445,7 @@ _data = [Vector2(0.38636363, 0.6741576), 0.0, 2.0856748, 0, 0, Vector2(1, 1.7078
 point_count = 2
 
 [sub_resource type="Animation" id="Animation_kih0c"]
-resource_name = "Attack_combo_1"
+resource_name = "Basic_combo_1"
 length = 0.65
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1470,7 +1461,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_lyrkg"]
-resource_name = "Attack_combo_2"
+resource_name = "Basic_combo_2"
 length = 0.65
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1486,7 +1477,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_c43xd"]
-resource_name = "Attack_combo_3"
+resource_name = "Basic_combo_3"
 length = 0.65
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1558,9 +1549,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8flut"]
 _data = {
-&"Attack_combo_1": SubResource("Animation_kih0c"),
-&"Attack_combo_2": SubResource("Animation_lyrkg"),
-&"Attack_combo_3": SubResource("Animation_c43xd"),
+&"Basic_combo_1": SubResource("Animation_kih0c"),
+&"Basic_combo_2": SubResource("Animation_lyrkg"),
+&"Basic_combo_3": SubResource("Animation_c43xd"),
 &"RESET": SubResource("Animation_i2e8t"),
 &"Roll_scarf": SubResource("Animation_70hv0")
 }
@@ -1569,7 +1560,7 @@ _data = {
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("25_8flut")
+"texture": ExtResource("19_fs7ks")
 }],
 "loop": true,
 "name": &"default",
@@ -1579,7 +1570,7 @@ animations = [{
 [node name="Player2" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_dewec")
 "abilità" = {
-"double_jump": true,
+"double_jump": false,
 "slide": true
 }
 
@@ -1700,7 +1691,7 @@ position = Vector2(150.755, 150)
 points = PackedVector2Array(50.244995, 45, 46.244995, 44, 43.244995, 46, 41.244995, 50, 40.244995, 54, 39.244995, 60)
 width = 3.0
 width_curve = SubResource("Curve_qqcod")
-texture = ExtResource("24_70hv0")
+texture = ExtResource("18_igrcy")
 texture_mode = 2
 joint_mode = 2
 begin_cap_mode = 2
@@ -1728,9 +1719,6 @@ hframes = 4
 position = Vector2(-0.32500005, -8.415)
 sprite_frames = SubResource("SpriteFrames_l6n3p")
 frame_progress = 0.59586585
-
-[node name="Effect" type="Node2D" parent="Player_sprite"]
-position = Vector2(-1.0152512, 0)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="Scarf" method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="Scarf" method="_on_animation_player_animation_started"]

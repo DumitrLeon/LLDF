@@ -27,6 +27,7 @@ var external_force = false
 var physic_timer = 0.0
 
 var space_state
+
 func _ready() -> void:
 	# usa il mondo della scena principale
 	space_state = get_tree().current_scene.get_world_2d().direct_space_state
@@ -36,13 +37,17 @@ func _ready() -> void:
 	prev_points.clear()
 	
 	for i in range(points_count):
-		var p = mark.position + Vector2(-i * radius, 0)
+		var p = mark.position + Vector2(0, +i * radius)
 		points.append(p)
 		prev_points.append(p)
 		
 	part.points = points
 
+
 func _physics_process(delta: float) -> void:
+	if scarf_anim.is_playing():
+		return
+	
 	if player.velocity == Vector2.ZERO:
 		physic_timer += delta
 	else:
@@ -120,6 +125,7 @@ func solve_constraints():
 				points[i-1] += dir * diff * 0.5
 				points[i] -= dir * diff * 0.5
 
+#TESTING cambiamento skin
 signal change_skin
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed():
@@ -129,8 +135,9 @@ func _input(event: InputEvent) -> void:
 		elif event.keycode == KEY_RIGHT:
 			print("Hai premuto destra!")
 			change_skin.emit("destra!")
+#TESTING cambiamento skin
 	
-	if event is  InputEventMouseButton and event.is_pressed():
+	if (event is  InputEventMouseButton and event.is_pressed()) and false:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			var dir = (points[points_count-1] - points[points_count-2]).normalized()
 			var p = points[points_count-1] + dir * radius
@@ -144,3 +151,47 @@ func _input(event: InputEvent) -> void:
 			prev_points.pop_front()
 			part.points = points
 			points_count -= 1
+
+#for fixing animation comunication
+@onready var scarf_anim: AnimationPlayer = $AnimationScarf
+var anims_coords = {
+	"Roll_scarf" : [Vector2(50.245,45.0),Vector2(46.245,44.0),Vector2(43.245,46.0),Vector2(41.245,50.0),Vector2(40.245,54),Vector2(39.245,60.0),Vector2(39.245,61.11)]
+}
+var last_anim = ""
+func _on_animation_player_animation_started(anim_name: StringName) -> void:
+	last_anim = anim_name
+	if anim_name == "Roll":
+		#orientamento
+		#da cambiare pk se è 0 non fa sempre destra
+		var player_spr = get_parent().find_child("Player_sprite")
+		
+		if player_spr.scale.x < 0:
+			scale.x = abs(scale.x) * (-1)
+		else:
+			scale.x = abs(scale.x)
+			
+		while not check_points_match("Roll_scarf"):
+			fix_points_move(anims_coords.get("Roll_scarf"))
+		scarf_anim.play("Roll_scarf")
+
+
+func fix_points_move(to_points): #per portare la sciarpa nella posizione iniziale dell'animazione
+	for i in range(len(points)):
+		prev_points[i] = points[i]
+		points[i] = points[i].move_toward(to_points[i], 0.01)
+	part.points = points
+
+func check_points_match(anim_name):
+	for i in range(len(points)):
+		if points[i] != anims_coords.get(anim_name)[i]:
+			return false
+	return true
+
+func _on_animation_player_current_animation_changed(name: String) -> void:
+	if (last_anim == "Roll") and (name == "Idle_air"):
+		scarf_anim.stop()
+		part.points = points
+		scale.x = abs(scale.x)
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	pass
