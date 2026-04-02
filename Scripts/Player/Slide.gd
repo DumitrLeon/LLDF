@@ -13,8 +13,8 @@ func Enter():
 		direction = (true if player_sprite.scale.x > 0 else false)
 	else:
 		direction = (true if player.dir == 1 else false)
+		
 	anim.play("Slide")
-	
 	player.velocity.x = slide_power * (1 if direction else -1)
 
 func Exit():
@@ -24,12 +24,11 @@ func Exit():
 func Update(_delta: float):
 	player.velocity.x = move_toward(player.velocity.x, 150.0 * (1 if direction else -1), 1)
 	
-	if RayCasts[0].is_colliding():
-		print("Sto collidendo con qualcosa!")
-	
 	if (Input.is_action_just_pressed("jump")) and (not RayCasts[0].is_colliding()):
 		player.velocity.x += (-170 if player.velocity.x < 0 else 170)
-		Transitioned.emit(self, "jump")
+		if player.jumps_made < player.max_jumps:
+			player.jumps_made += 1
+			Transitioned.emit(self, "Jump")
 
 func Physics_process(delta: float) -> void:
 	timer += delta
@@ -37,4 +36,6 @@ func Physics_process(delta: float) -> void:
 		Transitioned.emit(self, "Idle")
 	
 	if not player.is_on_floor():
+		player.velocity.x += (-170 if player.velocity.x < 0 else 170)
+		player.cojote_jump.start()
 		Transitioned.emit(self, "Idle_Air")

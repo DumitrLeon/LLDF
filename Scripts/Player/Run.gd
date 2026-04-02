@@ -7,8 +7,8 @@ func Enter():
 
 
 func Update(_delta: float):
-	check_slide()
-	check_jump()
+	check_slide(player)
+	check_jump(player)
 	super.Update(_delta)
 	if (player.dir == 0) and (not abs(player.velocity.x) > 0.1):
 		Transitioned.emit(self, "Idle") 
@@ -18,6 +18,6 @@ func Update(_delta: float):
 		Transitioned.emit(self,"Walk")
 
 func Physics_process(delta: float) -> void:
-	if not check_floor():
+	if not check_floor(player):
 		player.cojote_jump.start()
 		Transitioned.emit(self, "Idle_air")
