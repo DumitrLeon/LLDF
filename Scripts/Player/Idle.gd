@@ -36,14 +36,15 @@ func Update(_delta: float):
 	if player.velocity.x != 0: #si ferma
 		player.velocity.x = move_toward(player.velocity.x, 0.0, player.friction * _delta)
 	
-	check_slide()
-	check_jump()
+	check_attack(player)
+	check_slide(player)
+	check_jump(player)
 
 func Exit():
 	camera.position.y = -40.0
 
 func Physics_process(delta: float) -> void:
-	if not check_floor():
-		player.cojote_jump.start()
+	if not check_floor(player):
 		camera.position.y = move_toward(camera.position.y, -40.0, camera_speed)
+		player.cojote_jump.start()
 		Transitioned.emit(self, "Idle_air")
