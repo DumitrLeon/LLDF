@@ -2,7 +2,7 @@ extends State
 class_name Combat
 
 @onready var scarf = get_parent().get_parent().find_child("Scarf")
-@onready var movement_preload = preload("res://Scripts/Player/Movement.gd")
+@onready var movement_preload = preload("res://Scripts/Player/FSM/Movement.gd")
 var movement: Movement
 
 var combo = false

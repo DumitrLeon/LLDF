@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bsjewtb1xxpk3" path="res://Assets/TileSets/Sand_biome.png" id="1_w2ny1"]
 [ext_resource type="PackedScene" uid="uid://qi6fvdttff62" path="res://Scenes/Player.tscn" id="2_tnxnj"]
-[ext_resource type="Script" uid="uid://cb2gg87fo2wl5" path="res://Scenes/death_barrier.gd" id="3_tnxnj"]
-[ext_resource type="Script" uid="uid://bcc182kjf8uem" path="res://Scenes/check_point.gd" id="4_s0xyj"]
+[ext_resource type="Script" uid="uid://cb2gg87fo2wl5" path="res://Scripts/death_barrier.gd" id="3_tnxnj"]
+[ext_resource type="Script" uid="uid://bcc182kjf8uem" path="res://Scripts/check_point.gd" id="4_s0xyj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s0xyj"]
 texture = ExtResource("1_w2ny1")
