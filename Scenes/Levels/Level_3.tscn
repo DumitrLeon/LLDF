@@ -128,7 +128,7 @@ tile_map_data = PackedByteArray("AAD8/wAAAAADAAIAAAD9/wAAAAADAAIAAAD+/wAAAAADAAI
 tile_set = SubResource("TileSet_38glg")
 
 [node name="Player2" parent="." instance=ExtResource("2_tnxnj")]
-position = Vector2(1656, 32)
+position = Vector2(-306, -22)
 
 [node name="background" type="TileMapLayer" parent="."]
 self_modulate = Color(0.18684906, 0.15360522, 2.4065375e-08, 1)
