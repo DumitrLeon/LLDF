@@ -60,8 +60,8 @@ func check_attack(player):
 			player.set_meta("attack", "basic")
 			Transitioned.emit(self, "Combat")
 
-func apply_gravity(player):
+func apply_gravity(player, delta):
 	if not check_floor(player):
-		player.velocity.y += player.gravity
+		player.velocity.y += player.gravity * delta
 	else:
 		player.velocity.y = 0

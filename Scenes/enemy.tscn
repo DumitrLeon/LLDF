@@ -1,6 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1oofy5jbf14u"]
+[gd_scene load_steps=13 format=3 uid="uid://b1oofy5jbf14u"]
 
+[ext_resource type="Script" uid="uid://bp1v8asrmm6ri" path="res://Scripts/Enemies/enemy.gd" id="1_287tu"]
+[ext_resource type="Script" uid="uid://wle5guwnjl5l" path="res://Scripts/Enemies/Enemy_state_machine.gd" id="2_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://dwfdb44qpmeo1" path="res://Assets/Enemies/bob.png" id="2_287tu"]
+[ext_resource type="Script" uid="uid://cxi1dv68bw6ih" path="res://Scripts/Enemies/Patrolling.gd" id="3_afpow"]
+[ext_resource type="Script" uid="uid://6bgm3ulmem2f" path="res://Scripts/Enemies/Chasing.gd" id="5_0830c"]
 
 [sub_resource type="Animation" id="Animation_1dp5w"]
 resource_name = "Chasing"
@@ -133,10 +137,12 @@ size = Vector2(379.28473, 412.86008)
 
 [node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(0.33, 0.328)
+script = ExtResource("1_287tu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 12.43314)
-scale = Vector2(4.1225348, 4.1225348)
+rotation = 0.12217305
+scale = Vector2(4.123, 4.148)
 texture = ExtResource("2_287tu")
 flip_h = true
 hframes = 3
@@ -147,7 +153,17 @@ libraries = {
 &"": SubResource("AnimationLibrary_ghaa6")
 }
 
-[node name="EnemyStateMachine" type="Node" parent="."]
+[node name="EnemyStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_1f0kj")
+initial_state = NodePath("Patrolling")
+
+[node name="Patrolling" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("3_afpow")
+metadata/_custom_type_script = "uid://cxi1dv68bw6ih"
+
+[node name="Chasing" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("5_0830c")
+metadata/_custom_type_script = "uid://6bgm3ulmem2f"
 
 [node name="Label" type="Label" parent="."]
 offset_left = -86.40496

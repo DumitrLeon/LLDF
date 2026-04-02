@@ -1,18 +1,17 @@
 extends Node
-class_name FiniteStateMachine
+class_name EnemyFiniteStateMachine
 
-@export var initial_state : State
+@export var initial_state : Enemy_state
 
-var current_state : State
+var current_state : Enemy_state
 var states : Dictionary = {}
-var player : Player
+
 var label : Label
 
 func _ready() -> void:
-	player = get_tree().get_first_node_in_group("Player")
-	label = player.find_child("Label")
+	label = get_parent().find_child("Label")
 	for child in get_children():
-		if child is State:
+		if child is Enemy_state:
 			states[child.name.to_lower()] = child
 			child.Transitioned.connect(on_child_transitioned)
 		

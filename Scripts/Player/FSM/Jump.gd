@@ -19,7 +19,7 @@ func Update(_delta: float):
 
 
 func Physics_process(delta: float) -> void:
-	apply_gravity(player)
+	apply_gravity(player, delta)
 	if check_floor(player):
 		Transitioned.emit(self, "idle")
 		
